@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "6b94507d-5263-4568-a5b9-b88c326b295b",
+		"name": "Metromitra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22800488"
+	},
+	"item": [
+		{
+			"name": "creat_index",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SQKTMTisBRpf1pCHRiUy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\" : { \"max_result_window\" : 10000000 } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://elasticrds.juuride.com:8020/tr_hourlyridemasterratecard/_settings",
+					"protocol": "https",
+					"host": [
+						"elasticrds",
+						"juuride",
+						"com"
+					],
+					"port": "8020",
+					"path": [
+						"tr_hourlyridemasterratecard",
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "limit",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SQKTMTisBRpf1pCHRiUy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\" : { \"max_result_window\" : 10000000 } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://elasticrds.juuride.com:8020/tr_hourlyridemasterratecard/_settings",
+					"protocol": "https",
+					"host": [
+						"elasticrds",
+						"juuride",
+						"com"
+					],
+					"port": "8020",
+					"path": [
+						"tr_hourlyridemasterratecard",
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_all Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SQKTMTisBRpf1pCHRiUy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// search for all data\r\n{\r\n    \"query\":{\r\n        \"bool\":{\r\n            \"must\":[\r\n                //  {\"match\": {\"step\": \"Ride Request\"}},\r\n                  { \"match_all\": { } }\r\n                ]\r\n                 }\r\n               }\r\n            }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://elasticrds.juuride.com:8020/tr_ridetimes/_search?size=10000000",
+					"protocol": "https",
+					"host": [
+						"elasticrds",
+						"juuride",
+						"com"
+					],
+					"port": "8020",
+					"path": [
+						"tr_ridetimes",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "10000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
